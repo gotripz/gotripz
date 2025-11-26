@@ -234,15 +234,13 @@
     document.getElementById("seconds").textContent = Math.floor((diff%(1000*60)) / 1000);
   }, 1000);
 </script>
-<script>
 async function sendVisitorInfo() {
   try {
     // 1) Get IP and location
     const info = await fetch("https://ipapi.co/json/").then(r => r.json());
 
     // 2) Your Google Form POST URL
-    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeus7W_NmB0bcib97Ydk2I-fB3Kb18mFAk6cUsjNH51HPTuuw/formResponse";
-
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfmZpaE_8uVGVdpHm_H33XGxPd70lAEHjM6hGhOtZVuTFOnRQ/formResponse";
     // 3) Build form payload
     const fd = new FormData();
     fd.append("entry.215844663", info.ip);                       // IP
